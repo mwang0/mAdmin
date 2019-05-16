@@ -4,7 +4,8 @@
   "description": "mAdmin 是一个中后台产品前、后端解决方案.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode development"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,8 @@
   },
   "homepage": "https://github.com/mwang0/mAdmin#readme",
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2"
+  }
 }
