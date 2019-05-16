@@ -1,6 +1,6 @@
 {
   "name": "madmin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "mAdmin 是一个中后台产品前、后端解决方案.",
   "main": "index.js",
   "scripts": {
