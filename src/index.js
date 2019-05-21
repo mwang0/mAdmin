@@ -1,6 +1,8 @@
 'use strict'
 
 import './assets/style.css'
+import './assets/font/iconfont.css'
+import app from './app.vue'
 import sum from './vendor/sum'
 console.log('sum(1,2)' + sum(1, 2))
 
