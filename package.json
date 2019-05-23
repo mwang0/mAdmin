@@ -23,7 +23,8 @@
   "homepage": "https://github.com/mwang0/mAdmin#readme",
   "dependencies": {
     "@babel/runtime-corejs2": "^7.4.4",
-    "core-js": "^2.6.6"
+    "core-js": "^2.6.6",
+    "vue": "^2.6.10"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",

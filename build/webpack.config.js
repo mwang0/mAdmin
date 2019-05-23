@@ -7,6 +7,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const webpack = require('webpack')
 module.exports = {
   module: {
     rules: [
@@ -56,6 +57,9 @@ module.exports = {
     ]
   },
   plugins: [
+    // 热更新
+    new webpack.HotModuleReplacementPlugin(),
+
     // 5.2、处理 vue
     new VueLoaderPlugin(),
 
