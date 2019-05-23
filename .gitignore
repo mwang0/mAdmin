@@ -1,2 +1,13 @@
-node_modules
+node_modules/
+dist/
+
+.idea
+.vscode
 .history
+
+**/*.log
+package-lock.json
+yarn.lock
+todo/
+
+
