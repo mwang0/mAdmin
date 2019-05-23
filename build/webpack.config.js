@@ -38,7 +38,10 @@ module.exports = {
         test: /\.(jpe?g|png?|webp|gif)(\?.*)?$/,
         include: [/src/],
         use: {
-          loader: 'url-loader'
+          loader: 'url-loader',
+          options: {
+            limit: 8192 //小于8KB以base64嵌入
+          }
         }
       },
 
