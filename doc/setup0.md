@@ -9,7 +9,7 @@
 - [x] 处理 image
 - [x] 处理 vue
 - [x] 创建 html
-- [ ] 热更新
+- [x] 热更新
 
 ## es6/7/8 转 es5
 
@@ -144,7 +144,10 @@ module: {
     {
       test: /\.(jpe?g|png?|webp|gif)(\?.*)?$/,
       include: [/src/],
-      use: 'url-loader'
+      use: 'url-loader',
+      options: {
+        limit: 8192 //小于8KB以base64嵌入
+      }
     }
   ]
 }

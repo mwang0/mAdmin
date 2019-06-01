@@ -22,7 +22,16 @@ module.exports = {
       {
         test: /\.css$/,
         include: [/src/],
-        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }]
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[name]_[local]--[hash:base64:4]'
+            }
+          }
+        ]
       },
 
       // 3、处理 font
