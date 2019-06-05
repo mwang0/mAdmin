@@ -1,23 +1,26 @@
 <template>
   <div :class="$style.testA">
     testA
-    <p :class="$style.test">testB</p>
+    <p :class="$style.test">
+      testB
+    </p>
   </div>
 </template>
 
 <script>
 export default {
-  mounted() {
-    console.dir(this.$style);
-  }
+    mounted() {
+        const a = 1;
+        console.dir(this.$style);
+    },
 };
 </script>
 
 <style module>
 .testA {
-  padding: 15px;
+    padding: 15px;
 }
 .testB {
-  color: red;
+    color: red;
 }
 </style>
