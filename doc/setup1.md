@@ -7,6 +7,7 @@
 -   [*] EsLint,prettier
 -   [ ] 固定 moduleId/chunkId
 -   [ ] 配置 proxy
--   [ ] 拆分 webpack 配置文件
+-   [*] 拆分 webpack 配置文件
+-   [*] CleanWebpackPlugin :自动清除上一次打包文件
 
 // purifycssplugin

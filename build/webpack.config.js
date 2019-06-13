@@ -8,6 +8,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const commonConfig = {
     module: {
         rules: [
@@ -45,6 +46,8 @@ const commonConfig = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, '../src/index.html'),
         }),
+        // 删除上次打包生成的文件
+        new CleanWebpackPlugin(),
     ],
 };
 
