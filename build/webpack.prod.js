@@ -4,13 +4,21 @@
   Created by M.Wang [cn_wang@139.com]
   2019-06-11 16:23 星期二
 */
-
+const path = require('path');
 const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { commonConfig } = require('./webpack.config');
+
 const config = {
     mode: 'production',
+    output: {
+        // 输出目录
+        path: path.resolve(__dirname, '../dist'),
+        publicPath: '/',
+        filename: 'js/[name].js',
+        chunkFilename: 'js/[name].chunk.js',
+    },
     module: {
         rules: [
             {
