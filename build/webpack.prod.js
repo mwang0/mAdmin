@@ -7,6 +7,7 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { commonConfig } = require('./webpack.config');
 
@@ -56,8 +57,24 @@ const config = {
         }),
     ],
     optimization: {
-        minimizer: [new OptimizeCSSAssetsPlugin({})],
+        minimizer: [new OptimizeCSSAssetsPlugin({}), new UglifyJsPlugin()],
+        splitChunks: {
+            //开启代码分割
+            chunks: 'all', // all|initial|async 所有|同步|异步 进行代码分割
+            cacheGroups: {
+                vendors: {
+                    test: /[\\/]node_modules[\\/]/,
+                    priority: -10, //谁优先级大就把打包后的文件放到哪个组
+                    name: 'vendors',
+                },
+                default: {
+                    minChunks: 2,
+                    priority: -20,
+                    reuseExistingChunk: true, //模块已经被打包过了，就不用再打包了，复用之前的就可以
+                    name: 'common', //打包之后的文件名
+                },
+            },
+        },
     },
 };
-
 module.exports = merge(commonConfig, config);
